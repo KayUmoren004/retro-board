@@ -1,8 +1,48 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
-.App-logo {
+.Header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.Logo {
+  justify-content: flex-start;
+}
+
+.User {
+  justify-content: flex-end;
+}
+
+.ToolBar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.Layout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.Plus {
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.Plus > p {
+ background-color: gainsboro;
+ padding: 5px;
+ border-radius: 5px;
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +75,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
