@@ -1,45 +1,44 @@
 import React from 'react';
 import Colors from "./Utils/Colors";
 import TouchableOpacity from "./TouchableOpacity";
-import {ChevronLeft, ChevronRight, X} from "react-feather";
-const RetroItem = ({state, setState, item, RSTTitle, setItem}) => {
-    const addToCard = ({target}) => {
-        setItem(target.value);
-           setState((state) => [...state, item])
+import {Check, ChevronLeft, ChevronRight, X} from "react-feather";
+import Textarea from "./Textarea";
 
-    }
-    /*const updateFunction = ({ target }) => {
-
-    };*/
+const RetroItem = ({state, item, RSTTitle, updateItem, newItem}) => {
     return (
         <div style={
             RSTTitle === "Went Well"
                 ? {backgroundColor: Colors.green}
                 : RSTTitle === "To Improve"
                 ? {backgroundColor: Colors.red}
-                :RSTTitle === "Action Items"
+                : RSTTitle === "Action Items"
                     ? {backgroundColor: Colors.purple}
                     : {}
         }>
-           <div className="RSTItemText">
-               <textarea
-                    value={item}
+            <div className="RSTItemText">
+                <Textarea
+                    //value={item}
                     placeholder="Enter text here"
-                    onChange={addToCard}
-                  /*  onKeyDown={() => addToCard()}*/
-               />
-           </div>
+                    onChange={() => updateItem}
+                    onKeyDown={newItem}
+
+                />
+                {/*<TouchableOpacity onPress={addToCard}>*/}
+                {/*    <Check color="white" size={25}/>*/}
+                {/*</TouchableOpacity>*/}
+            </div>
             <div className="Lola">
                 <TouchableOpacity onPress={() => console.log("Left")}>
-                    <ChevronLeft color="white" size={25} />
+                    <ChevronLeft color="white" size={25}/>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => console.log("Delete")}>
-                    <X color="white" size={25} />
+                    <X color="white" size={25}/>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => console.log("Right")}>
-                    <ChevronRight color="white" size={25} />
+                    <ChevronRight color="white" size={25}/>
                 </TouchableOpacity>
             </div>
+            <p>{state.name}</p>
         </div>
     );
 };
