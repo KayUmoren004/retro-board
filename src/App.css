@@ -1,38 +1,70 @@
 .App {
-  text-align: center;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Layout {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.RST {
+
+}
+
+button {
+  border:none;
+  background-color:transparent;
+  outline:none;
+}
+.Lola {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+
+}
+
+.btn {
+  /* background: #ededed; */
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+
+.touched {
+  opacity: 0.5;
+}
+
+.RSTItemText {
+  padding: 10px;
+}
+
+textarea {
+  opacity: 0.65;
+  background-color: transparent;
+  resize: none;
   color: white;
+  text-align: left;
+  width: 100%;
+  height: 20px;
+  box-sizing:border-box;
+  border: 0;
 }
 
-.App-link {
-  color: #61dafb;
+textarea:hover {
+  cursor: pointer;
+  background-color: hsla(0, 0%, 100%, 0.25);
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+textarea::placeholder {
+  color: white;
+  font-weight: bold;
+  text-align: left;
 }
