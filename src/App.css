@@ -1,28 +1,45 @@
 .App {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
 
+.Title {
+  padding: 10px 15px;
+}
+
+.Change-Layout {
+  display: flex;
+  background-color: skyblue;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
 .Layout {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  flex-direction: row;
 }
 
-.RST {
-
+.LayoutAlt {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  flex-direction: column;
 }
 
 button {
-  border:none;
-  background-color:transparent;
-  outline:none;
+  border: none;
+  background-color: transparent;
+  outline: none;
 }
+
 .Lola {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
 }
 
 .btn {
@@ -53,7 +70,7 @@ textarea {
   text-align: left;
   width: 100%;
   height: 20px;
-  box-sizing:border-box;
+  box-sizing: border-box;
   border: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -62,11 +79,19 @@ textarea {
 textarea:hover {
   cursor: pointer;
   background-color: hsla(0, 0%, 100%, 0.25);
-
 }
 
 textarea::placeholder {
   color: white;
   font-weight: bold;
   text-align: left;
+}
+
+.Plus {
+  display: flex;
+  justify-content: center;
+  background-color: lightgray;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 25px;
 }
