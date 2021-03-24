@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/KayUmoren004/retro-board/static/css/main.ae0021fa.chunk.css",
+    "main.js": "/KayUmoren004/retro-board/static/js/main.fbd418d8.chunk.js",
+    "main.js.map": "/KayUmoren004/retro-board/static/js/main.fbd418d8.chunk.js.map",
+    "runtime-main.js": "/KayUmoren004/retro-board/static/js/runtime-main.0621049a.js",
+    "runtime-main.js.map": "/KayUmoren004/retro-board/static/js/runtime-main.0621049a.js.map",
+    "static/js/2.79d2ddcc.chunk.js": "/KayUmoren004/retro-board/static/js/2.79d2ddcc.chunk.js",
+    "static/js/2.79d2ddcc.chunk.js.map": "/KayUmoren004/retro-board/static/js/2.79d2ddcc.chunk.js.map",
+    "static/js/3.438bf3ba.chunk.js": "/KayUmoren004/retro-board/static/js/3.438bf3ba.chunk.js",
+    "static/js/3.438bf3ba.chunk.js.map": "/KayUmoren004/retro-board/static/js/3.438bf3ba.chunk.js.map",
+    "index.html": "/KayUmoren004/retro-board/index.html",
+    "static/css/main.ae0021fa.chunk.css.map": "/KayUmoren004/retro-board/static/css/main.ae0021fa.chunk.css.map",
+    "static/js/2.79d2ddcc.chunk.js.LICENSE.txt": "/KayUmoren004/retro-board/static/js/2.79d2ddcc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0621049a.js",
+    "static/js/2.79d2ddcc.chunk.js",
+    "static/css/main.ae0021fa.chunk.css",
+    "static/js/main.fbd418d8.chunk.js"
+  ]
+}
