@@ -2,32 +2,28 @@ import React, { useState } from "react";
 import Category from "./Category";
 import "../App.css";
 import TouchableOpacity from "./TouchableOpacity";
-import { AlignJustify, MoreHorizontal, MoreVertical } from "react-feather";
+import { MoreHorizontal, MoreVertical } from "react-feather";
 import Colors from "./Utils/Colors";
 
 const Container = ({ name }) => {
-  const [card1, setCard1] = useState([""]);
-  const [card2, setCard2] = useState([""]);
-  const [card3, setCard3] = useState([""]);
-  const [items1, setItems1] = useState("");
-  const [items2, setItems2] = useState("");
-  const [items3, setItems3] = useState("");
+  const [WentWell, setWentWell] = useState([]);
+  const [ToImprove, setToImprove] = useState([]);
+  const [ActionItems, setActionItems] = useState([]);
+  const [WentWellItems, setWentWellItems] = useState("");
+  const [ToImproveItems, setToImproveItems] = useState("");
+  const [ActionItemsItems, setActionItemsItems] = useState("");
   const [layout, setLayout] = useState("Layout");
-  console.log({
-    card1,
-    // card2,
-    // card3
-  });
+
   return (
     <div>
       <div className="App">
         <div className="Title">{name}</div>
         <div className="Change-Layout">
           <div className="Title">Layout</div>
-          <TouchableOpacity onPress={() => setLayout("LayoutAlt")}>
+          <TouchableOpacity onPress={() => setLayout("Layout")}>
             <MoreHorizontal color={Colors.black} size={16} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setLayout("Layout")}>
+          <TouchableOpacity onPress={() => setLayout("LayoutAlt")}>
             <MoreVertical color={Colors.black} size={16} />
           </TouchableOpacity>
         </div>
@@ -36,26 +32,32 @@ const Container = ({ name }) => {
         <Category
           name="Went Well"
           plus="+"
-          state={card1}
-          setState={setCard1}
-          items={items1}
-          setItems={setItems1}
+          state={WentWell}
+          setState={setWentWell}
+          items={WentWellItems}
+          setItems={setWentWellItems}
+          layout={layout}
+          setLayout={setLayout}
         />
         <Category
           name="To Improve"
           plus="+"
-          state={card2}
-          setState={setCard2}
-          items={items2}
-          setItems={setItems2}
+          state={ToImprove}
+          setState={setToImprove}
+          items={ToImproveItems}
+          setItems={setToImproveItems}
+          layout={layout}
+          setLayout={setLayout}
         />
         <Category
           name="Action Items"
           plus="+"
-          state={card3}
-          setState={setCard3}
-          items={items3}
-          setItems={setItems3}
+          state={ActionItems}
+          setState={setActionItems}
+          items={ActionItemsItems}
+          setItems={setActionItemsItems}
+          layout={layout}
+          setLayout={setLayout}
         />
       </div>
     </div>

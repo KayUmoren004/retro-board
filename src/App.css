@@ -43,7 +43,6 @@ button {
 }
 
 .btn {
-  /* background: #ededed; */
   padding: 10px 15px;
   border: none;
   outline: none;
@@ -60,6 +59,8 @@ button {
 
 .RSTItemText {
   padding: 10px;
+  display: flex;
+  flex-direction: row;
 }
 
 textarea {

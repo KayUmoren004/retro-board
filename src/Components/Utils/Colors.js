@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 export default {
   primary: "#2163F6",
   secondary: "#E9446A",

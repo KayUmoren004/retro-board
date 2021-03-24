@@ -1,37 +1,59 @@
-import React, { useState } from "react";
+import React from "react";
 import "../App.css";
 // import RetroItem from "./RetroItem";
 import Colors from "./Utils/Colors";
-import { Check, ChevronLeft, ChevronRight, X } from "react-feather";
+import {
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  X,
+  Check,
+} from "react-feather";
 import TouchableOpacity from "./TouchableOpacity";
 
-const Category = ({ name, plus, state, setState, items, setItems }) => {
-  /*
-    const addToCardKeyPressed = (e) => {
-        if (e.key === "Enter") {
-            let lineCount = 0
-            if (e.keyCode === 13) {
-                lineCount++
-                setState([...state, ""])
-
-            }
-            if (lineCount >= 1) {
-                e.preventDefault()
-                return false
-            }
-
-        }
-    }
-    const updateFunction = (userInput, idx) => {
-       const newState = [...state]
-        newState[idx] = userInput
-        setState(newState)
-
-    };
-    * */
-
+const Category = ({
+  name,
+  plus,
+  state,
+  setState,
+  layout,
+}) => {
+ 
   const DeleteItems = (indexToDelete) => {
     setState([...state].filter((item, idx) => idx !== indexToDelete));
+  };
+
+  const LeftLayout = () => {
+    if (layout === "Layout") {
+      return (
+        <TouchableOpacity onPress={() => console.log("Left")}>
+          <ChevronLeft color="white" size={25} />
+        </TouchableOpacity>
+      );
+    } else if (layout === "LayoutAlt") {
+      return (
+        <TouchableOpacity onPress={() => console.log("Left")}>
+          <ChevronDown color="white" size={25} />
+        </TouchableOpacity>
+      );
+    }
+  };
+
+  const RightLayout = () => {
+    if (layout === "Layout") {
+      return (
+        <TouchableOpacity onPress={() => console.log("Right")}>
+          <ChevronRight color="white" size={25} />
+        </TouchableOpacity>
+      );
+    } else if (layout === "LayoutAlt") {
+      return (
+        <TouchableOpacity onPress={() => console.log("Right")}>
+          <ChevronUp color="white" size={25} />
+        </TouchableOpacity>
+      );
+    }
   };
 
   const newItem = (e) => {
@@ -65,17 +87,8 @@ const Category = ({ name, plus, state, setState, items, setItems }) => {
       <div className="RST">
         {state.map((subCards, idx) => {
           return (
-            // <RetroItem
-            //     key={idx}
-            //     RSTTitle={name}
-            //     state={state}
-            //     setState={setState}
-            //     item={subCards}
-            //     onChange={e => updateItem(e.target.value, idx)}
-            //     onKeyDown={newItem}
-            //     // setItem={setItems}
-            // />
             <div
+              key={idx}
               style={
                 name === "Went Well"
                   ? { backgroundColor: Colors.green }
@@ -94,22 +107,18 @@ const Category = ({ name, plus, state, setState, items, setItems }) => {
                   onChange={(e) => updateItem(e.target.value, idx)}
                   onKeyDown={newItem}
                 />
-                {/*<TouchableOpacity onPress={newItemCheck}>*/}
-                {/*    <Check color="white" size={25}/>*/}
-                {/*</TouchableOpacity>*/}
+                <TouchableOpacity onPress={newItemCheck}>
+                  <Check color="white" size={15} />
+                </TouchableOpacity>
               </div>
               <div className="Lola">
-                <TouchableOpacity onPress={() => console.log("Left")}>
-                  <ChevronLeft color="white" size={25} />
-                </TouchableOpacity>
+                <LeftLayout />
                 <TouchableOpacity onPress={() => DeleteItems(idx)}>
                   <X color="white" size={25} />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => console.log("Right")}>
-                  <ChevronRight color="white" size={25} />
-                </TouchableOpacity>
+                <RightLayout />
               </div>
-              <p>{state.name}</p>
+              <p />
             </div>
           );
         })}
