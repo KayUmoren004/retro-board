@@ -18,39 +18,44 @@ const Category = ({
   state,
   setState,
   layout,
+  MoveRight,
+  Count,
+  MoveLeft,
+  AntiCount,
 }) => {
- 
   const DeleteItems = (indexToDelete) => {
     setState([...state].filter((item, idx) => idx !== indexToDelete));
   };
 
-  const LeftLayout = () => {
+  // const MoveItem = () => {};
+
+  const LeftLayout = ({ onPress }) => {
     if (layout === "Layout") {
       return (
-        <TouchableOpacity onPress={() => console.log("Left")}>
+        <TouchableOpacity onPress={onPress}>
           <ChevronLeft color="white" size={25} />
         </TouchableOpacity>
       );
     } else if (layout === "LayoutAlt") {
       return (
-        <TouchableOpacity onPress={() => console.log("Left")}>
-          <ChevronDown color="white" size={25} />
+        <TouchableOpacity onPress={onPress}>
+          <ChevronUp color="white" size={25} />
         </TouchableOpacity>
       );
     }
   };
 
-  const RightLayout = () => {
+  const RightLayout = ({ onPress }) => {
     if (layout === "Layout") {
       return (
-        <TouchableOpacity onPress={() => console.log("Right")}>
+        <TouchableOpacity onPress={onPress}>
           <ChevronRight color="white" size={25} />
         </TouchableOpacity>
       );
     } else if (layout === "LayoutAlt") {
       return (
-        <TouchableOpacity onPress={() => console.log("Right")}>
-          <ChevronUp color="white" size={25} />
+        <TouchableOpacity onPress={onPress}>
+          <ChevronDown color="white" size={25} />
         </TouchableOpacity>
       );
     }
@@ -112,11 +117,11 @@ const Category = ({
                 </TouchableOpacity>
               </div>
               <div className="Lola">
-                <LeftLayout />
+                <LeftLayout onPress={() => MoveLeft(idx, AntiCount)} />
                 <TouchableOpacity onPress={() => DeleteItems(idx)}>
                   <X color="white" size={25} />
                 </TouchableOpacity>
-                <RightLayout />
+                <RightLayout onPress={() => MoveRight(idx, Count)} />
               </div>
               <p />
             </div>

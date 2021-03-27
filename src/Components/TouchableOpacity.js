@@ -13,9 +13,6 @@ const TouchableOpacity = ({ children, onPress, styleName }) => {
   };
 
   const handleMouseUp = () => {
-    setTimeout(() => {
-      setState({ touched: false });
-    }, 50);
     onPress();
   };
 

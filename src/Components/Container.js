@@ -14,6 +14,66 @@ const Container = ({ name }) => {
   const [ActionItemsItems, setActionItemsItems] = useState("");
   const [layout, setLayout] = useState("Layout");
 
+  const MoveItemsRight = (idx, count) => {
+    switch (count) {
+      case 0:
+        setWentWell(
+          [...WentWell].filter((itm, currentIdx) => currentIdx !== idx)
+        );
+        setToImprove([...ToImprove, WentWell[idx]]);
+
+        break;
+
+      case 1:
+        setToImprove(
+          [...ToImprove].filter((itm, currentIdx) => currentIdx !== idx)
+        );
+        setActionItems([...ActionItems, ToImprove[idx]]);
+        break;
+
+      case 2:
+        setActionItems(
+          [...ActionItems].filter((itm, currentIdx) => currentIdx !== idx)
+        );
+        setWentWell([...WentWell, ActionItems[idx]]);
+
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  const MoveItemsLeft = (idx, antiCount) => {
+    switch (antiCount) {
+      case 2:
+        setWentWell(
+          [...WentWell].filter((itm, currentIdx) => currentIdx !== idx)
+        );
+        setActionItems([...ActionItems, WentWell[idx]]);
+
+        break;
+
+      case 0:
+        setActionItems(
+          [...ActionItems].filter((itm, currentIdx) => currentIdx !== idx)
+        );
+        setToImprove([...ToImprove, ActionItems[idx]]);
+        break;
+
+      case 1:
+        setToImprove(
+          [...ToImprove].filter((itm, currentIdx) => currentIdx !== idx)
+        );
+        setWentWell([...WentWell, ToImprove[idx]]);
+
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <div>
       <div className="App">
@@ -38,6 +98,10 @@ const Container = ({ name }) => {
           setItems={setWentWellItems}
           layout={layout}
           setLayout={setLayout}
+          MoveRight={MoveItemsRight}
+          MoveLeft={MoveItemsLeft}
+          Count={0}
+          AntiCount={2}
         />
         <Category
           name="To Improve"
@@ -47,7 +111,11 @@ const Container = ({ name }) => {
           items={ToImproveItems}
           setItems={setToImproveItems}
           layout={layout}
+          MoveLeft={MoveItemsLeft}
+          MoveRight={MoveItemsRight}
           setLayout={setLayout}
+          Count={1}
+          AntiCount={1}
         />
         <Category
           name="Action Items"
@@ -57,7 +125,11 @@ const Container = ({ name }) => {
           items={ActionItemsItems}
           setItems={setActionItemsItems}
           layout={layout}
+          MoveLeft={MoveItemsLeft}
+          MoveRight={MoveItemsRight}
           setLayout={setLayout}
+          Count={2}
+          AntiCount={0}
         />
       </div>
     </div>
