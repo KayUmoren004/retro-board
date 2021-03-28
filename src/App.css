@@ -1,5 +1,6 @@
 .App {
   /* text-align: center; */
+  padding: 1%;
 }
 
 .Header {
@@ -27,7 +28,32 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: center;
+}
+
+button {
+  border:none;
+  background-color:transparent;
+  outline:none;
+}
+
+.CAT1 {
+  margin-left: 0;
+  margin-right: auto;
+  width: 30%;
+}
+
+.CAT2 {
+  /* margin-left: 0;
+  margin-right: auto; */
+  width: 30%;
+
+}
+
+.CAT3 {
+  margin-left: auto;
+  width: 30%;
+  margin-right: 0;
 }
 
 .Plus {
@@ -40,6 +66,64 @@
  background-color: gainsboro;
  padding: 5px;
  border-radius: 5px;
+}
+
+.RSTItem {
+  /* */
+}
+
+.RSTItemText{
+  padding: 10px;
+}
+
+.Lola {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-evenly;
+}
+
+.btn {
+  /* background: #ededed; */
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+  
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+
+.touched {
+  opacity: 0.5;
+}
+
+textarea {
+  opacity: 0.65;
+  width: 100%;
+  background-color: transparent;
+  display: block;
+  border: 0;
+  margin-bottom: 0.5rem;
+  resize: none;
+  color: white;
+  text-align: left;
+}
+
+textarea::placeholder {
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+
+textarea:hover {
+  /* background: hsla(0, 0%, 100%, 0.2)
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZD0iTTkgNS4zTDEwLjYgN2wtNC4xIDQuMS0xLjYtMS42TDkgNS4zem0yLjgtLjNsLS43LS43Yy0uMy0uMy0uNy0uMy0xIDBsLS43LjZMMTEgNi42bC44LS44Yy4zLS4zLjMtLjYgMC0uOHpNNCAxMS44YzAgLjEuMS4yLjIuMmwxLjgtLjUtMS42LTEuNi0uNCAxLjl6IiBmaWxsPSIjZmZmIi8+PC9zdmc+")
+    100% 0/27px no-repeat; */
+  cursor: pointer;
+  background-color: hsla(0, 0%, 100%, 0.25);
+  
 }
 
 /* .App-logo {
