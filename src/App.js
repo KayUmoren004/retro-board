@@ -1,8 +1,12 @@
-import React from "react";
-import Container from "./Components/Screen Components/Container";
+import "./App.css";
+import Container from "./Components/Container";
 
-const App = () => {
-  return <Container />;
-};
+function App() {
+  return (
+    <div>
+      <Container name="Retroboard" />
+    </div>
+  );
+}
 
 export default App;
